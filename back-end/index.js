@@ -32,12 +32,14 @@ const Produto = mongoose.model("produto", produtoSchema)
 
 
 app.post("/cadastrousuario", async (req , res)=>{
+    const nome = req.body.nome;
     const email = req.body.email;
     const senha = req.body.senha;
 
    
 
     const usuario = new Usuario({
+        nome : nome,
         email : email,
         senha : senha
     })
